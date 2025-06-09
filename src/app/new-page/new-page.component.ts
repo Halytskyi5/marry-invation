@@ -32,10 +32,10 @@ export class NewPageComponent implements OnInit{
   }
   intersectImage(entries : IntersectionObserverEntry[]) {
     //entries.
-    entries.forEach(entry => {
+    /*entries.forEach(entry => {
       entry.target.classList.add("image-animation")
 
-    });
+    });*/
   }
 
 
