@@ -1,0 +1,230 @@
+main{
+  width: 100%;
+  font-family: "Great Vibes", cursive;
+  font-weight: normal;
+  font-style: normal;
+  color: #FFF;
+  .content {
+    margin: 0 auto;
+    width: 40%;
+    height: 100vh;
+    h3 {
+      font-size: 70px;
+      font-weight: normal;
+    }
+
+    .title {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      img{
+        width: 80%;
+        padding: 10%;
+      }
+      .image-animation {
+        padding: 0;
+        width: 100%;
+        transition: all 1s linear;
+      }
+
+      .title-content {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 20vh;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        h1 {
+          font-size: 100px;
+          font-weight: normal;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+          text-align: center;
+
+          animation: scroll-h1 linear;
+          //animation-time
+          /*opacity: 0;
+          transform: translateY(20px); !* Додаємо невеликий зсув для ефекту *!
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+          &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+          }*/
+        }
+        section {
+          position: absolute;
+          height: 150px;
+          border: #fff 2px solid;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow:  2px 2px 4px rgba(0, 0, 0, 1);
+        }
+
+      }
+
+      .about-date{
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, -50%);
+        p{
+          margin: 0 auto;
+          font-size: 40px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+          .date{
+            font-size: 60px;
+          }
+        }
+      }
+    }
+    .dear-guests-block {
+      margin: 20px 0;
+      text-align: center;
+      h2 {
+        margin: 10px 0;
+        font-family: 'Roboto', sans-serif;
+        color: #2b2b2b;
+        font-weight: 500;
+        font-size: 50px;
+      }
+      span {
+        font-family: 'Roboto', sans-serif;
+        color: #646363;
+        font-weight: 400;
+        font-size: 20px;
+      }
+    }
+    .calendar-block {
+      color: #3E3A39;
+      text-align: center;
+
+      .calendar-date {
+        font-family: 'Roboto', sans-serif;
+        .line-days {
+          margin: 10px 0;
+          display: flex;
+          flex-direction: row;
+          div {
+            flex: 1;
+
+          }
+          .our-day {
+            position: relative;
+            color: red;
+            font-weight: bolder;
+            img {
+              position: absolute;
+              height: 500%;
+              top: -200%;
+              left: 50%;
+              transform: translate(-50%, 0%);
+            }
+          }
+
+        }
+        h4 {
+          font-weight: 600;
+          color: #65635f;
+          margin: 20px;
+        }
+      }
+    }
+    .location-block {
+      background-color: #f9f7f9;
+      padding: 30px 0;
+      p {
+        font-family: 'Roboto', sans-serif;
+        color: #646363;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      button {
+        margin: 20px 0;
+        width: 200px;
+        height: 30px;
+        border-radius: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: #2b2b2b;
+        font-weight: 400;
+        font-size: 15px;
+        cursor: pointer;
+        border: 2px solid #2b2b2b;
+        background: #f9f7f9;
+
+        &:hover {
+          background-color: #6b3d1f;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .is-visible {
+      background-color: red;
+      transition: all 1s;
+    }
+    .time-block {
+      padding: 50px 0;
+      p {
+        font-family: "Cormorant Garamond", serif;
+        font-optical-sizing: auto;
+        font-weight: normal;
+        font-style: normal;
+      }
+      .event {
+        position: relative;
+        display: flex;
+        margin: 30px 0;
+        div {
+          flex: 1;
+        }
+        .photo {
+          font-size: 20px;
+          img {
+            width: 50px;
+          }
+        }
+        .time {
+          display: flex;
+          font-size: 30px;
+          p {
+            margin: auto;
+          }
+        }
+
+        section {
+          position: absolute;
+          height: 100%;
+          left: 50%;
+          top: 0;
+          border: #2b2b2b 1px solid;
+        }
+      }
+    }
+    .dress-code {
+      p {
+        font-family: 'Roboto', sans-serif;
+        color: #646363;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+@keyframes scroll-h1 {
+  from {
+    opacity: 0;
+    transform: translateY(20px); //Додаємо невеликий зсув для ефекту *!
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Затримка анімації: Додайте transition-delay у CSS, щоб блоки з'являлися послідовно.
