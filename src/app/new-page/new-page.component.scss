@@ -4,9 +4,14 @@ main{
   font-weight: normal;
   font-style: normal;
   color: #FFF;
+
+  //position: relative;
   .content {
     margin: 0 auto;
     width: 40%;
+    &.visible-confirm {
+      opacity: 0.2;
+    }
     h3 {
       font-size: 70px;
       font-weight: normal;
@@ -337,9 +342,122 @@ main{
           width: 100%;
         }
       }
+      .presence {
+        font-family: 'Roboto', sans-serif;
+        margin: 0px 50px;
+        display: flex;
+        flex-direction: column;
+
+        p {
+          color: #646363;
+          font-weight: 400;
+          font-size: 15px;
+          width: 80%;
+          margin: 10px auto;
+          line-height: 1.5;
+        }
+
+        button {
+          width: 40%;
+          height: 50px;
+          margin: 0 auto;
+          font-weight: bolder;
+          color: #6D5A5F;
+          background-color: #fdc0c0;
+          border: none;
+          border-radius: 50px;
+
+          &:hover {
+            cursor: pointer;
+            color: #fdc0c0;
+            background-color: #6D5A5F;
+            transition: all 500ms;
+          }
+        }
+      }
     }
     padding-bottom: 50px;
   }
+  .confirm-presence {
 
+    &.visible {
+      top: 50%;
+      transition: all 1s;
+      opacity: 1;
+    }
+    position: fixed;
+    width: 40%;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b58f84;
+    padding: 20px 50px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all 2s linear;
+
+    h3 {
+      font-family: "Georgia", sans-serif;
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+        height: 50px;
+        background-color: #b58f84;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: white;
+        padding-left: 20px;
+        outline: none;
+
+        &::placeholder {
+          color: white;
+        }
+
+        &.radio {
+          margin: 20px;
+          width: 15px;
+          height: 15px;
+        }
+
+      }
+
+      button {
+        margin:20px auto 0 auto;
+        width: 200px;
+        height: 50px;
+        border: none;
+        font-weight: bolder;
+        color: #6D5A5F;
+        background-color: #FFFFFF;
+        border-radius: 50px;
+
+        &:not(:disabled):hover {
+          cursor: pointer;
+          color: #fdc0c0;
+          background-color: #6D5A5F;
+          transition: all 500ms;
+        }
+
+        &:disabled {
+          background-color: #646363;
+        }
+      }
+    }
+
+
+
+  }
 }
 

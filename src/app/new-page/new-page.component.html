@@ -1,5 +1,5 @@
 <main>
-  <div class="content">
+  <div class="content" [ngClass]="{'visible-confirm' : showConfirm}">
     <div class="title">
       <div class="title-image" >
         <img src="images/love.jpg" alt="" appObserveVisibility >
@@ -161,8 +161,30 @@
       <div class="presence">
         <p>Будь ласка, підтвердьте свою присутність на нашому весіллі до 1 серпня 2025 року.
           Ми з нетерпінням чекаємо на вас!</p>
-        <button (click)="acceptPresence()">Підтвердити присутність</button>
+        <button (click)="acceptPresence()" [disabled]="showConfirm">Підтвердити присутність</button>
+
+      </div>
+      <div class="img">
+<!--        <img src="images/_MG_3215.jpg" alt="">-->
       </div>
     </div>
+  </div>
+  <div class="confirm-presence" [ngClass]="{'visible' : showConfirm}">
+    <h3>Просимо вас відповісти на декілька запитань:</h3>
+    <form #myForm="ngForm" (ngSubmit)="submitForm()" method="post">
+      <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Ваше ім'я" required> <br>
+      <label>
+        <input [(ngModel)]="side" class="radio" type="radio" name="groom" value="groom">
+        Ми друзі/рідні нареченого
+      </label>
+      <br>
+      <label>
+        <input [(ngModel)]="side" class="radio" type="radio" name="groom" value="bride" required>
+        Ми друзі/рідні нареченої
+      </label><br>
+      <input [(ngModel)]="family" type="text" id="family" name="family"
+             placeholder="Перерахуйте всіх присутніх з вашої сім'ї" required>
+      <button type="submit" [disabled]="!myForm.valid">Відправити</button>
+    </form>
   </div>
 </main>
