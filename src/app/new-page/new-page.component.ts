@@ -10,5 +10,8 @@ import {ObserveVisibilityDirective} from '../observe-visibility.directive';
   standalone: true
 })
 export class NewPageComponent {
+  acceptPresence() {
+    console.log('worked')
+  }
 
 }
