@@ -5,12 +5,13 @@ main{
   font-style: normal;
   color: #FFF;
 
-  //position: relative;
   .content {
     margin: 0 auto;
     width: 40%;
     &.visible-confirm {
       opacity: 0.2;
+      transition: all 0.5s ease-in;
+
     }
     h3 {
       font-size: 70px;
@@ -379,10 +380,9 @@ main{
     padding-bottom: 50px;
   }
   .confirm-presence {
-
     &.visible {
       top: 50%;
-      transition: all 1s;
+      transition: all 0.5s ease-in;
       opacity: 1;
     }
     position: fixed;
@@ -398,13 +398,14 @@ main{
     font-size: 15px;
     border-radius: 50px;
     transition: all 2s linear;
-
     h3 {
-      font-family: "Georgia", sans-serif;
-      font-size: 40px;
-      font-weight: normal;
-      margin-bottom: 20px;
+        font-family: "Georgia", sans-serif;
+        font-size: 40px;
+        font-weight: normal;
+        margin-bottom: 20px;
+        z-index: 0;
     }
+
 
     form {
       text-align: left;
@@ -447,16 +448,26 @@ main{
           cursor: pointer;
           color: #fdc0c0;
           background-color: #6D5A5F;
-          transition: all 500ms;
+          transition: all 0.4s;
+          transform: translateY(-4%);
         }
 
         &:disabled {
           background-color: #646363;
+          color: #adadad;
+        }
+        &.close {
+          background-color: #de3232;
+          color: #FFFFFF;
+
+          &:hover {
+            background-color: #ea2323;
+            transition: all 0.4s ease-out;
+            transform: translateY(-4%);
+          }
         }
       }
     }
-
-
 
   }
 }

@@ -22,12 +22,14 @@ export class NewPageComponent {
   showConfirm = false;
   acceptPresence() {
     this.showConfirm = true;
-    //this.renderer.addClass(this.el.nativeElement, "visible")
-    console.log('added')
   }
 
   submitForm() {
-    console.log(this.name + " " + this.family + " " + this.side)
+    // actions
+    this.closeWindow()
+  }
+
+  closeWindow() {
     this.showConfirm = false;
   }
 
