@@ -37,7 +37,6 @@ export class NewPageComponent {
       next: response => {
         console.log(response);
         this.closeWindow()
-        this.getAll();
       },
       error: err => {
         console.error(err);
@@ -48,10 +47,6 @@ export class NewPageComponent {
 
   closeWindow() {
     this.showConfirm = false;
-  }
-
-  getAll() {
-    this.answerService.getAnswers().subscribe(answers => console.warn(answers));
   }
 
 }

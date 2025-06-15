@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import {NewPageComponent} from './new-page/new-page.component';
+import {GuestsComponent} from './guests/guests.component';
 
 export const routes: Routes = [
   {
@@ -10,5 +11,9 @@ export const routes: Routes = [
   {
     path: 'invite-you',
     component: NewPageComponent
+  },
+  {
+    path: 'guests',
+    component: GuestsComponent
   }
 ];

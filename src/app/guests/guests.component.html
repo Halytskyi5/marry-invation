@@ -1,0 +1,22 @@
+<div [ngClass]="{'close-block' : closePasswordBlock}" class="password-block">
+  <input [(ngModel)]="password" type="password" placeholder="Уведіть пароль">
+  <button (click)="checkPassword()">Увійти</button>
+  <p [ngClass]="{'visible' : incorrectPassword}">Неправильний пароль!</p>
+</div>
+<main [ngClass]="{'unvisible' : !closePasswordBlock}">
+  <h1>Всі гості</h1>
+  <div class="guests-list" *ngIf="answers$ | async as answers">
+    <div class="guests-row">
+      <p>Ім'я</p>
+      <p>Члени сім'ї</p>
+      <p>Від кого</p>
+    </div>
+
+    <div class="guests-row" *ngFor="let answer of answers; let i = index">
+      <p>{{answer.name}}</p>
+      <p>{{answer.family}}</p>
+      <p *ngIf="answer.fromGroom === true">Від нареченого</p>
+      <p *ngIf="!answer.fromGroom">Від нареченої</p>
+    </div>
+  </div>
+</main>
