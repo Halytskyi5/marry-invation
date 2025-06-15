@@ -472,3 +472,96 @@ main{
   }
 }
 
+@media (max-width: 1250px) {
+  main {
+    .content {
+      width: 50%;
+      .title {
+        .title-content {
+          gap: 20vh;
+          h1 {
+            font-size: 70px;
+
+          }
+        }
+        .about-date {
+          p {
+            font-size: 30px;
+          }
+        }
+        .dear-guests-block {
+          h2 {
+            font-size: 40px;
+          }
+        }
+      }
+      .all-content-block {
+        .presence {
+          button {
+            width: 80%;
+          }
+        }
+      }
+    }
+    .confirm-presence {
+      h3 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 850px) {
+  main {
+    .content {
+      width: 60%;
+      .title {
+        .title-content {
+          gap: 15vh;
+        }
+      }
+
+    }
+    .confirm-presence {
+      width: 60%;
+    }
+
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    .content {
+      width: 80%;
+    }
+    .confirm-presence {
+      font-size: 10px;
+      h3 {
+        font-size: 20px;
+      }
+      form {
+        button {
+          width: 40%;
+        }
+        input {
+          font-size: 10px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    .content {
+      width: 100%;
+    }
+    .confirm-presence {
+      padding: 30px;
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@
     <div class="guests-row" *ngFor="let answer of answers; let i = index">
       <p>{{answer.name}}</p>
       <p>{{answer.family}}</p>
-      <p *ngIf="answer.fromGroom === true">Від нареченого</p>
+      <p *ngIf="answer.fromGroom">Від нареченого</p>
       <p *ngIf="!answer.fromGroom">Від нареченої</p>
     </div>
   </div>
