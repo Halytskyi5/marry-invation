@@ -299,30 +299,42 @@ main{
 
         .colors {
           margin: 20px auto;
-          display: inline-flex;
-          gap: 15px;
+          display: flex;
           border-radius: 50px;
-          border: 1px black solid;
           padding: 15px;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
 
           div {
-            height: 50px;
-            width: 50px;
+            height: 100px;
+            width: 100px;
             border-radius: 50px;
             border: 1px black solid;
           }
 
+          .black-color {
+            background-color: #2b2b2b;
+            border: 1px white solid;
+          }
+
+          .white-pink-color {
+            background-color: #f8f1e7;
+          }
+          .pink-color {
+            background-color: #fcdfc3;
+          }
+          .black-pink-color {
+            background-color: #b9a398;
+          }
           .green-color {
             background-color: green;
           }
-
-          .yellow-color {
-            background-color: yellow;
+          .white-color {
+            background-color: #FFFFFF;
+            border: 1px solid black;
           }
 
-          .red-color {
-            background-color: red;
-          }
         }
       }
       .details-block {

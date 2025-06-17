@@ -33,7 +33,7 @@ export class GuestsComponent implements OnInit{
   }
 
   checkPassword() {
-    if (this.password === 'pass') {
+    if (this.password === '01032019') {
       this.closePasswordBlock = true;
       this.incorrectPassword = false;
     } else {
