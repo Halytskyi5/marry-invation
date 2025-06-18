@@ -22,7 +22,7 @@ export class GuestsComponent implements OnInit{
   password : string = '';
   closePasswordBlock : boolean = false;
   incorrectPassword : boolean = false;
-  answers : Answer[] = [];
+  //answers : Answer[] = [];
   answers$ : Observable<Answer[]>;
 
   constructor(private answerService : AnswersService) {
