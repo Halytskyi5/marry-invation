@@ -10,7 +10,6 @@ import {environment} from '../environments/environment.development';
 export class AnswersService {
   private url = environment.APP_API_URL + "/answers";
 
-
   constructor(private http : HttpClient) { }
 
   getAnswers() : Observable<Answer[]> {
