@@ -128,11 +128,11 @@
         <h3 appObserveVisibility>Дрес-код</h3>
         <p>Ми будемо дуже вдячні, якщо ви оберете наряди <br>у кольорах нашого весілля:</p>
         <div class="colors">
-          <div class="black-color"></div>
           <div class="white-pink-color"></div>
           <div class="pink-color"></div>
           <div class="black-pink-color"></div>
           <div class="white-color"></div>
+          <div class="black-color"></div>
         </div>
         <p>Разом ми створимо це свято особливим!</p>
       </div>
@@ -175,8 +175,8 @@
       <input [(ngModel)]="family" type="text" id="family" name="family"
              placeholder="Перерахуйте всіх присутніх з вашої сім'ї" required>
       <div style="display: flex">
-      <button type="submit" [disabled]="!myForm.valid">Відправити</button>
       <button (click)="closeWindow()" class="close">Закрити</button>
+        <button type="submit" [disabled]="!myForm.valid">Відправити</button>
       </div>
     </form>
   </div>

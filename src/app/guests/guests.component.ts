@@ -46,6 +46,10 @@ export class GuestsComponent implements OnInit, OnDestroy{
     }
   }
 
+  deleteAnswer(answer : Answer) {
+    console.log(answer);
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

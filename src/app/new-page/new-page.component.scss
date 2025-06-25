@@ -333,6 +333,10 @@ main{
           .white-color {
             background-color: #FFFFFF;
             border: 1px solid black;
+            background-image: url("/images/gold-color.jpg");
+            background-size: 150%;
+            background-position: center;
+            background-repeat: no-repeat;
           }
 
         }
@@ -513,6 +517,15 @@ main{
             width: 80%;
           }
         }
+        .dress-code {
+          .colors {
+            div {
+              height: 110px;
+              width: 110px;
+              border-radius: 100px;
+            }
+          }
+        }
       }
     }
     .confirm-presence {
@@ -540,7 +553,7 @@ main{
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 658px) {
   main {
     .content {
       width: 80%;
@@ -563,7 +576,7 @@ main{
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 495px) {
   main {
     .content {
       width: 100%;
@@ -576,4 +589,31 @@ main{
       }
     }
   }
+}
+
+@media (max-width: 395px) {
+  main {
+    .content {
+      .all-content-block {
+        .dress-code {
+          .colors {
+            padding: 15px 5px;
+            gap: 25px;
+            div {
+              height: 80px;
+              width: 80px;
+
+            }
+          }
+
+        }
+        .details-block {
+          h3 {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+  }
+
 }

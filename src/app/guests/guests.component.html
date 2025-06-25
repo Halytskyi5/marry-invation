@@ -7,12 +7,14 @@
   <h1>Всі гості</h1>
   <div class="guests-list" *ngIf="answers.length > 0">
     <div class="guests-row">
+      <p class="index">№</p>
       <p>Ім'я</p>
       <p>Члени сім'ї</p>
       <p>Від кого</p>
     </div>
 
     <div class="guests-row" *ngFor="let answer of answers; let i = index">
+      <p class="index">{{i}}</p>
       <p>{{answer.name}}</p>
       <p>{{answer.family}}</p>
       <p *ngIf="answer.fromGroom">Від нареченого</p>
