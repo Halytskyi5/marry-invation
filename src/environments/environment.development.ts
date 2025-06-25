@@ -1,3 +1,3 @@
 export const environment = {
-  APP_API_URL: 'http://localhost:8080'
+  APP_API_URL: 'https://wedding-invation-backend.onrender.com'
 };
