@@ -13,8 +13,11 @@ export class AnswersService {
   constructor(private http : HttpClient) { }
 
   getAnswers() : Observable<Answer[]> {
-   // console.log(process.env['APP_API_URL']);
-    return this.http.get<Answer[]>(this.url + '/get-all');
+    return this.http.get<Answer[]>(this.url + '/get-all', {
+      params: {
+        time: new Date().getTime()
+      }
+    });
   }
 
   addAnswer(answer : Answer) : Observable<Answer> {
