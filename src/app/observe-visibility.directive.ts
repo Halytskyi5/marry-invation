@@ -17,7 +17,6 @@ export class ObserveVisibilityDirective implements OnInit{
          entries.forEach(entry => {
            if (entry.isIntersecting) {
              this.renderer.addClass(this.el.nativeElement, 'animation');
-             console.log('add')
              obs.unobserve(entry.target);
            }
          });

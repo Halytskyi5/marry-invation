@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AsyncPipe, NgClass, NgForOf, NgIf} from '@angular/common';
 import {Answer} from '../model/answer';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {AnswersService} from '../answers.service';
 
 @Component({
@@ -18,18 +18,23 @@ import {AnswersService} from '../answers.service';
   styleUrl: './guests.component.scss',
   standalone: true
 })
-export class GuestsComponent implements OnInit{
+export class GuestsComponent implements OnInit, OnDestroy{
   password : string = '';
   closePasswordBlock : boolean = false;
   incorrectPassword : boolean = false;
-  //answers : Answer[] = [];
-  answers$ : Observable<Answer[]>;
+  answers : Answer[] = [];
+  subscription : Subscription;
 
   constructor(private answerService : AnswersService) {
   }
 
   ngOnInit() {
-    this.answers$ = this.answerService.getAnswers();
+    this.subscription = this.answerService.getAnswers().subscribe({
+      next: answers => {
+        this.answers = answers;
+        console.log(this.answers)
+      }
+    });
   }
 
   checkPassword() {
@@ -40,5 +45,9 @@ export class GuestsComponent implements OnInit{
       this.incorrectPassword = true;
       console.log('incorrect')
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

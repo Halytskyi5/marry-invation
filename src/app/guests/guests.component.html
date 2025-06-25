@@ -5,7 +5,7 @@
 </div>
 <main [ngClass]="{'unvisible' : !closePasswordBlock}">
   <h1>Всі гості</h1>
-  <div class="guests-list" *ngIf="answers$ | async as answers">
+  <div class="guests-list" *ngIf="answers.length > 0">
     <div class="guests-row">
       <p>Ім'я</p>
       <p>Члени сім'ї</p>
