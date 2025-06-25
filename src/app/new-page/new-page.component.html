@@ -128,10 +128,12 @@
         <h3 appObserveVisibility>Дрес-код</h3>
         <p>Ми будемо дуже вдячні, якщо ви оберете наряди <br>у кольорах нашого весілля:</p>
         <div class="colors">
-          <div class="white-pink-color"></div>
-          <div class="pink-color"></div>
-          <div class="black-pink-color"></div>
-          <div class="white-color"></div>
+          <div class="white"></div>
+          <div class="white-beige"></div>
+          <div class="beige"></div>
+          <div class="white-brown"></div>
+          <div class="brown"></div>
+          <div class="gold-color"></div>
           <div class="black-color"></div>
         </div>
         <p>Разом ми створимо це свято особливим!</p>
@@ -179,5 +181,9 @@
         <button type="submit" [disabled]="!myForm.valid">Відправити</button>
       </div>
     </form>
+  </div>
+  <div class="success" [ngClass]="{'show-success' : showSuccess === true}">
+    <p>Дякуємо за відповідь!  Чекаємо на Вас!</p>
+    <button (click)="closeSuccess()">Закрити</button>
   </div>
 </main>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import {ObserveVisibilityDirective} from '../observe-visibility.directive';
 import {FormsModule} from '@angular/forms';
 import {NgClass, NgIf} from '@angular/common';
@@ -24,6 +24,7 @@ export class NewPageComponent implements OnInit, OnDestroy{
   family = '';
   side = '';
   showConfirm = false;
+  showSuccess : boolean = false;
   addAnswerSubscription : Subscription = Subscription.prototype;
   wakeUpServer : Subscription = Subscription.prototype;
 
@@ -47,6 +48,7 @@ export class NewPageComponent implements OnInit, OnDestroy{
     this.addAnswerSubscription = this.answerService.addAnswer(answer).subscribe({
       next: response => {
         this.closeWindow()
+        this.showSuccess = true;
       },
       error: err => {
         console.error(err);
@@ -56,6 +58,10 @@ export class NewPageComponent implements OnInit, OnDestroy{
 
   closeWindow() {
     this.showConfirm = false;
+  }
+
+  closeSuccess() {
+    this.showSuccess = false;
   }
 
   ngOnDestroy(): void {
