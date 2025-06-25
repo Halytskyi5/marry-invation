@@ -24,8 +24,8 @@ export class NewPageComponent implements OnInit, OnDestroy{
   family = '';
   side = '';
   showConfirm = false;
-  addAnswerSubscription : Subscription;
-  wakeUpServer : Subscription;
+  addAnswerSubscription : Subscription = Subscription.prototype;
+  wakeUpServer : Subscription = Subscription.prototype;
 
   ngOnInit(): void {
     this.wakeUpServer = this.answerService.getAnswers().subscribe({
@@ -59,8 +59,13 @@ export class NewPageComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    this.wakeUpServer.unsubscribe();
-    this.addAnswerSubscription.unsubscribe();
+    if (!this.addAnswerSubscription.closed) {
+      this.addAnswerSubscription.unsubscribe();
+    }
+    if (!this.wakeUpServer.closed) {
+      this.wakeUpServer.unsubscribe();
+    }
+
   }
 
 

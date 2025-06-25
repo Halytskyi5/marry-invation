@@ -32,7 +32,6 @@ export class GuestsComponent implements OnInit, OnDestroy{
     this.subscription = this.answerService.getAnswers().subscribe({
       next: answers => {
         this.answers = answers;
-        console.log(this.answers)
       }
     });
   }
