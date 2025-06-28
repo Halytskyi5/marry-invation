@@ -1,11 +1,12 @@
-import {Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {ObserveVisibilityDirective} from '../observe-visibility.directive';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {NgClass, NgIf} from '@angular/common';
 import {AnswersService} from '../answers.service';
 import {Answer} from '../model/answer';
 import {Subscription} from 'rxjs';
 import {response} from 'express';
+
 @Component({
   selector: 'app-new-page',
   imports: [
@@ -18,15 +19,17 @@ import {response} from 'express';
   styleUrl: './new-page.component.scss',
   standalone: true
 })
-export class NewPageComponent implements OnInit, OnDestroy{
-  constructor(private renderer: Renderer2, private el: ElementRef, private answerService : AnswersService) {}
+export class NewPageComponent implements OnInit, OnDestroy {
+  constructor(private renderer: Renderer2, private el: ElementRef, private answerService: AnswersService) {
+  }
+
   name = '';
   family = '';
   side = '';
   showConfirm = false;
-  showSuccess : boolean = false;
-  addAnswerSubscription : Subscription = Subscription.prototype;
-  wakeUpServer : Subscription = Subscription.prototype;
+  showSuccess: boolean = false;
+  addAnswerSubscription: Subscription = Subscription.prototype;
+  wakeUpServer: Subscription = Subscription.prototype;
 
   ngOnInit(): void {
     this.wakeUpServer = this.answerService.getAnswers().subscribe({
@@ -39,25 +42,29 @@ export class NewPageComponent implements OnInit, OnDestroy{
     this.showConfirm = true;
   }
 
-  submitForm() {
-    let answer : Answer = {
-      name : this.name,
-      family : this.family,
+  submitForm(form :NgForm) {
+    let answer: Answer = {
+      name: this.name,
+      family: this.family,
       fromGroom: this.side === 'groom'
     }
     this.addAnswerSubscription = this.answerService.addAnswer(answer).subscribe({
       next: response => {
-        this.closeWindow()
+        this.closeWindow();
+        console.warn(response);
         this.showSuccess = true;
+        form.reset();
       },
       error: err => {
         console.error(err);
       }
     });
+
   }
 
   closeWindow() {
     this.showConfirm = false;
+
   }
 
   closeSuccess() {

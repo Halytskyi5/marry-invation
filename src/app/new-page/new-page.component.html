@@ -163,7 +163,7 @@
   </div>
   <div class="confirm-presence" [ngClass]="{'visible' : showConfirm}">
       <h3>Просимо вас відповісти на декілька запитань:</h3>
-    <form #myForm="ngForm" (ngSubmit)="submitForm()" method="post">
+    <form #myForm="ngForm" method="post" novalidate>
       <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Ваше ім'я" required> <br>
       <label>
         <input [(ngModel)]="side" class="radio" type="radio" name="groom" value="groom">
@@ -178,7 +178,7 @@
              placeholder="Перерахуйте всіх присутніх з вашої сім'ї" required>
       <div style="display: flex">
       <button (click)="closeWindow()" class="close">Закрити</button>
-        <button type="submit" [disabled]="!myForm.valid">Відправити</button>
+        <button type="submit" (click)="submitForm(myForm)" [disabled]="!myForm.valid">Відправити</button>
       </div>
     </form>
   </div>
